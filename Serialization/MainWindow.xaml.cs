@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
@@ -29,7 +29,7 @@ namespace Serialization
                 tempcar.Marke = txtMarke.Text;
                 tempcar.Baujahr = int.Parse(txtBaujahr.Text);
                 carList.Add(tempcar);
-                lbxItems.Items.Add(tempcar.Modell);
+                lbxItems.Items.Add(tempcar.Marke + " " + tempcar.Modell + " " + tempcar.Modell);
             }
             catch (Exception ex)
             {
