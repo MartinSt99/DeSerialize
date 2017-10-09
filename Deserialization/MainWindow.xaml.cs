@@ -25,4 +25,35 @@ namespace Deserialization
             InitializeComponent();
         }
     }
+
+    [Serializable]
+    public class Car
+    {
+
+        private int baujahr;
+
+        public int Baujahr
+        {
+            get { return baujahr; }
+            set { baujahr = value; }
+        }
+        private string marke;
+
+        public string Marke
+        {
+            get { return marke; }
+            set { marke = value; }
+        }
+        private string modell;
+
+        public string Modell
+        {
+            get { return modell; }
+            set { modell = value; }
+        }
+
+
+
+
+    }
 }

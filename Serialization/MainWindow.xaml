@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Serialization" Height="350" Width="525">
     <Grid>
-        
+        <TextBox x:Name="txtMarke" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="217" Margin="10,33,0,0"/>
+        <TextBox x:Name="txtModell" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="217" Margin="10,91,0,0"/>
+        <TextBox x:Name="txtBaujahr" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" Margin="10,146,0,0"/>
+        <ListBox x:Name="lbxItems" HorizontalAlignment="Left" Height="201" VerticalAlignment="Top" Width="275" Margin="232,14,0,0"/>
+        <Label x:Name="lblMarke" Content="Marke" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,7,0,0"/>
+        <Label x:Name="lblModell" Content="Modell" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,65,0,0"/>
+        <Label x:Name="lblBaujahr" Content="Baujahr" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,120,0,0"/>
+        <Button x:Name="btnAdd" Content="Hinzufügen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="201" Margin="10,195,0,0" Click="btnAdd_Click"/>
+        <Button x:Name="btnSerialize" Content="Serialisieren" HorizontalAlignment="Left" VerticalAlignment="Top" Width="201" Margin="10,220,0,0" Click="btnSerialize_Click"/>
+
     </Grid>
 </Window>
