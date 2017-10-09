@@ -32,6 +32,7 @@ namespace Deserialization
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
+            listBox.Items.Clear();
             var SerialBytes = File.ReadAllBytes("../../../serialbin.bin");
             var memorystreamd = new MemoryStream(SerialBytes);
             var bfd = new BinaryFormatter();
