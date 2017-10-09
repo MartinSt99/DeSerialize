@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Formatters.Soap;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using CarLib;
 
 namespace Deserialization
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -24,36 +15,31 @@ namespace Deserialization
         {
             InitializeComponent();
         }
-    }
 
-    [Serializable]
-    public class Car
-    {
-
-        private int baujahr;
-
-        public int Baujahr
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-            get { return baujahr; }
-            set { baujahr = value; }
-        }
-        private string marke;
-
-        public string Marke
-        {
-            get { return marke; }
-            set { marke = value; }
-        }
-        private string modell;
-
-        public string Modell
-        {
-            get { return modell; }
-            set { modell = value; }
+            Stream streamRead = File.OpenRead("../../../MyElementList.xml");
+            var soapRead = new SoapFormatter();
+            var rowSoap = (MyCarList) soapRead.Deserialize(streamRead);
+            streamRead.Close();
+            foreach (var item in rowSoap)
+            {
+                var x = (Car) item;
+                listBox.Items.Add(x.Marke + " " + x.Modell + " " + x.Baujahr);
+            }
         }
 
-
-
-
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            var SerialBytes = File.ReadAllBytes("../../../serialbin.bin");
+            var memorystreamd = new MemoryStream(SerialBytes);
+            var bfd = new BinaryFormatter();
+            var carlist = bfd.Deserialize(memorystreamd) as MyCarList;
+            foreach (var item in carlist)
+            {
+                var x = (Car) item;
+                listBox.Items.Add(x.Marke + " " + x.Modell + " " + x.Baujahr);
+            }
+        }
     }
 }

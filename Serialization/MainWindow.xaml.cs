@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Windows;
+using CarLib;
 
 namespace Serialization
 {
     /// <summary>
     ///     Interaction logic for MainWindow.xaml
     /// </summary>
-    /// 
     public partial class MainWindow : Window
     {
-
-
         public MyCarList carList = new MyCarList();
 
         public MainWindow()
@@ -22,9 +19,6 @@ namespace Serialization
             InitializeComponent();
         }
 
-        public void DisplayInBox()
-        {
-            }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -37,74 +31,26 @@ namespace Serialization
                 carList.Add(tempcar);
                 lbxItems.Items.Add(tempcar.Modell);
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-            }
-        }
-        [Serializable]
-        public class MyCarList
-        {
-            public void Add(Car c)
-            {
-                row.Add(c);
-            }
-
-            public override string ToString()
-            {
-                string temp = null;
-                foreach (Car my in row)
-                    temp += my.ToString() + "\n";
-                return (temp);
-            }
-
-            ArrayList row = new ArrayList();
-        }
-        [Serializable]
-        public class Car
-        {
-            public Car()
-            {
-                
-            }
-            public Car(string Marke, string Modell, int Baujahr)
-            {
-                this.modell = Modell;
-                baujahr = Baujahr;
-                marke = Marke;
-            }
-            private int baujahr;
-
-            private string marke;
-
-            private string modell;
-
-            public int Baujahr
-            {
-                get { return baujahr; }
-                set { baujahr = value; }
-            }
-
-            public string Marke
-            {
-                get { return marke; }
-                set { marke = value; }
-            }
-
-            public string Modell
-            {
-                get { return modell; }
-                set { modell = value; }
             }
         }
 
         private void btnSerialize_Click(object sender, RoutedEventArgs e)
         {
-            SoapFormatter formatter = new SoapFormatter();
-            Stream objfilestream = new FileStream("Myserialzed.xml", FileMode.Create, FileAccess.Write, FileShare.None);
-            Stream streamWrite = File.Create("MyElementList.xml");
-            SoapFormatter soapWrite = new SoapFormatter();
+            Stream streamWrite = File.Create("../../../MyElementList.xml");
+            var soapWrite = new SoapFormatter();
             soapWrite.Serialize(streamWrite, carList);
             streamWrite.Close();
+        }
+
+        private void btnSerialize_Binary_Click(object sender, RoutedEventArgs e)
+        {
+            var memorystream = new MemoryStream();
+            var bf = new BinaryFormatter();
+            bf.Serialize(memorystream, carList);
+            var SerialBytes = memorystream.ToArray();
+            File.WriteAllBytes("../../../serialbin.bin", SerialBytes);
         }
     }
 }

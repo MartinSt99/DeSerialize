@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Deserialization"
         mc:Ignorable="d"
-        Title="Deserialization" Height="350" Width="525">
+        Title="Deserialization" Height="220.588" Width="290.686">
     <Grid>
-        
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="139" VerticalAlignment="Top" Width="263" Margin="10,10,0,0"/>
+        <Button x:Name="button" Content="Deserialize (SOAP)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Margin="10,154,0,0" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="Deserialize (BINARY)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Margin="144,154,0,0" Click="button_Copy_Click"/>
+
     </Grid>
 </Window>

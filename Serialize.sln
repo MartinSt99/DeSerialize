@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serializat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deserialization", "Deserialization\Deserialization.csproj", "{DDA3C416-45DB-4E18-8396-766E259CF1BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLib", "CarLib\CarLib.csproj", "{1D76A83B-10FE-441C-A02F-9CDF1DB22FD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DDA3C416-45DB-4E18-8396-766E259CF1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDA3C416-45DB-4E18-8396-766E259CF1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDA3C416-45DB-4E18-8396-766E259CF1BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D76A83B-10FE-441C-A02F-9CDF1DB22FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D76A83B-10FE-441C-A02F-9CDF1DB22FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D76A83B-10FE-441C-A02F-9CDF1DB22FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D76A83B-10FE-441C-A02F-9CDF1DB22FD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,8 +14,9 @@
         <Label x:Name="lblMarke" Content="Marke" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,7,0,0"/>
         <Label x:Name="lblModell" Content="Modell" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,65,0,0"/>
         <Label x:Name="lblBaujahr" Content="Baujahr" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,120,0,0"/>
-        <Button x:Name="btnAdd" Content="Hinzufügen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="201" Margin="10,195,0,0" Click="btnAdd_Click"/>
-        <Button x:Name="btnSerialize" Content="Serialisieren" HorizontalAlignment="Left" VerticalAlignment="Top" Width="201" Margin="10,220,0,0" Click="btnSerialize_Click"/>
+        <Button x:Name="btnAdd" Content="Hinzufügen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="212" Margin="10,195,0,0" Click="btnAdd_Click"/>
+        <Button x:Name="btnSerialize" Content="Serialize (SOAP)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="10,220,0,0" Click="btnSerialize_Click"/>
+        <Button x:Name="btnSerialize_Binary" Content="Serialize (BINARY)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="121,220,0,0" Click="btnSerialize_Binary_Click"/>
 
     </Grid>
 </Window>
