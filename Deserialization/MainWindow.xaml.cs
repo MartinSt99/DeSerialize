@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Windows;
@@ -18,6 +18,7 @@ namespace Deserialization
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            listBox.Items.Clear();
             Stream streamRead = File.OpenRead("../../../MyElementList.xml");
             var soapRead = new SoapFormatter();
             var rowSoap = (MyCarList) soapRead.Deserialize(streamRead);
